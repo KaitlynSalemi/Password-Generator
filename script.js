@@ -8,22 +8,41 @@ let specialChar = [" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"];
 let numChar = ["0123456789"];
 let lowerCaseChar = ["abcdefghijklmnopqrstuvwxyz"];
 let upperCaseChar = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+// array of the arrays
+let chosenChar = []
 
-// ask about password criteria 
-let specialQ = confirm("Would you like to use special characters for your password? OK for yes. Cancel for no");
-let numQ = confirm("Would you like to use numbers for your password? OK for yes. Cancel for no");
-let lowerCaseQ = confirm("Would you like to use lowercase letters for your password? OK for yes. Cancel for no");
-let upperCaseQ = confirm("Would you like to use uppercase letters in your password? OK for yes. Cancel for no");
+// ask about password criteria, put it in a function, but define the variable globally first 
+var specialQ;
+var numQ;
+var lowerCaseQ;
+var upperCaseQ;
+
+function confirms(){
+  specialQ = confirm("Would you like to use special characters for your password? OK for yes. Cancel for no");
+  numQ = confirm("Would you like to use numbers for your password? OK for yes. Cancel for no");
+  lowerCaseQ = confirm("Would you like to use lowercase letters for your password? OK for yes. Cancel for no");
+  upperCaseQ = confirm("Would you like to use uppercase letters in your password? OK for yes. Cancel for no");
+}
+confirms();
 
 // if false for all criteria, alert "please select atleast one" and bring them through the choices again
 if ((specialQ || numQ || lowerCaseQ || upperCaseQ) === false){
-  alert("Please select atleast one of the four criteria");
+  alert("Please select at least one of the four criteria");
+  confirms();
 }
 
 // randomly create a password useing the criteria given by the user
 function generatePassword() {
 
 }
+generatePassword();
+// this will be used eventually, but instead of alert use the text area
+for (var i = 0; i < characterArrays.length; i++) {
+  alert(characterArrays[i]);
+}
+
+// Length (must be between 8 and 128 characters)
+var randomChar = Math.floor(Math.random() * 128) + 1;
 
 // when the user clicks the Generate Password button the generatePassword function will execute
 var generateBtn = document.querySelector("#generate");
