@@ -43,55 +43,36 @@
     confirms();
     }
   }
-  console.log(chosenChar);
+  // console.log(chosenChar);
 
-// loop the random number function for each character of the password
+  // present the password in the textarea
+  var textArea = document.querySelector(".card");
+
+  // loop the random number function for each character of the password
 // Length (must be between 8 and 128 characters)
-// present the password in the textarea
-
-function compilePassword() {
-  var passwordText = "";
-  
-  for (var i = 0; i < 15; i++) {
-      passwordText+=chosenChar[generatePassword()]
-  };
-  alert(passwordText);
-}
-console.log(compilePassword);
-
-var textArea = document.querySelector("#password");
+  function compilePassword() {
+    var passwordText = "";
+    
+    for (var i = 0; i < 15; i++) {
+        passwordText+=chosenChar[generatePassword()]
+    };
+    textArea.textContent = passwordText;
+  }
+  // console.log(compilePassword);
 
 // randomly choose a character from the array of chosen characters 
-
-function generatePassword() {
-  return Math.floor(Math.random() * chosenChar.length);
-}
-console.log(generatePassword);
+  function generatePassword() {
+    return Math.floor(Math.random() * chosenChar.length);
+  }
+  // console.log(generatePassword);
 
 // when the user clicks the Generate Password button the generatePassword function will execute
-
-// var generateBtn = document.querySelector("#generate");
-// generateBtn.addEventListener("click", compilePassword);
+  var generateBtn = document.querySelector("#generate");
+  generateBtn.addEventListener("click", compilePassword);
 
 // let the copy button copy the random password to the users clip board 
+  function copyToClipboard() {
 
-// function copyToClipboard() {
-
-// }
-// let copyBtn = document.querySelector("#copy");
-// copyBtn.addEventListener("click", copyToClipboard);
-
-
-
-// ----------- leftover given code (doesn't make sense yet)
-
-  // Write password to the #password input
-  // function generatePassword() {
-  //   var password = makePassword();
-    
-
-  //   passwordText.value = password;
-
-  //   copyBtn.removeAttribute("disabled");
-  //   copyBtn.focus();
-  // }
+  }
+  let copyBtn = document.querySelector("#copy");
+  copyBtn.addEventListener("click", copyToClipboard);
