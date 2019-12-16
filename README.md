@@ -8,4 +8,8 @@ thought about the user experience and what they should being seeing step by step
 
 started with the questions 
 
-made a places to compile the answers so that the function has a place to randomize from 
+made a place to compile the answers so that the function has a place to randomize from 
+
+finished style
+
+password generator fully functioning
