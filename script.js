@@ -45,12 +45,12 @@
   }
   // console.log(chosenChar);
 
-  // present the password in the textarea
-  var textArea = document.querySelector(".card");
-
-  // loop the random number function for each character of the password
+// loop the random number function for each character of the password
 // Length (must be between 8 and 128 characters)
+// present the password in the textarea
   function compilePassword() {
+    var textArea = document.querySelector("#password");
+    
     var passwordText = "";
     
     for (var i = 0; i < 15; i++) {
@@ -72,7 +72,12 @@
 
 // let the copy button copy the random password to the users clip board 
   function copyToClipboard() {
+    var textArea = document.querySelector("#password");
+    textArea.select();
 
+    document.execCommand("copy");
+
+    alert("Your password has been copied to your Clipboard!");
   }
   let copyBtn = document.querySelector("#copy");
   copyBtn.addEventListener("click", copyToClipboard);
